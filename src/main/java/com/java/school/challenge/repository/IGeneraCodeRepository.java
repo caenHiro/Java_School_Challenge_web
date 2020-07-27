@@ -8,15 +8,15 @@ public interface IGeneraCodeRepository<T,S> {
 	 * @param url la url a guardar en el hash map
 	 * @return la shurt url generada
 	 */
-	String generaShurtURL(String url );
+	String generaShortenerURL(String url );
 	/**
-	 * Metodo encargado de debolver la url original
-	 * @param shurtUrl la shurt url que se tiene que devodificar
+	 * Metodo encargado de devolver la url original
+	 * @param shortenerURL la shurt url que se tiene que decodificar
 	 * @return la url original
 	 */
-	String decodificaShurtURL(String shurtUrl );
+	String decodificaShortenerURL(String shortenerURL );
 	/**
-	 * Metodo que regresa la estructura de datos que tiene almacenada las diferentes URL y shurt URL
+	 * Metodo que regresa la estructura de datos que tiene almacenada las diferentes URL y shortenerURL 
 	 * @return el hash map con los datos
 	 */
 	HashMap<T, S> getClavesAlphaLlave();

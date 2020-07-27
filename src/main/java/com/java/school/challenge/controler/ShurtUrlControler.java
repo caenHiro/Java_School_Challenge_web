@@ -15,7 +15,7 @@ import com.java.school.challenge.service.IGeneraCodeService;
  
  
 @RestController
-@RequestMapping("/shurtURL")
+@RequestMapping("/shortenerURL")
 public class ShurtUrlControler {
 	private static Logger log = LoggerFactory.getLogger(ShurtUrlControler.class);
 	
@@ -24,12 +24,12 @@ public class ShurtUrlControler {
 
 	@PostMapping
 	public String regresaAlias(@RequestBody String url ){
-		return servise.generaShurtURL(url);
+		return servise.generaShortenerURL(url);
 	}
 	
-	@GetMapping("/{shurtURL}")
-	public String redirige(@PathVariable("shurtURL") String shurtURL ){
-		return servise.decodificaShurtURL(shurtURL);
+	@GetMapping("/{shortenerURL}")
+	public String redirige(@PathVariable("shortenerURL") String shortenerURL ){
+		return servise.decodificaShortenerURL(shortenerURL);
 	}
 	
 	

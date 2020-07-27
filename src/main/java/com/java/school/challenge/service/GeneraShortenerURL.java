@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import com.java.school.challenge.repository.IGeneraCodeRepository;
 
 @Service
-public class GeneraShurtURL implements IGeneraCodeService {
+public class GeneraShortenerURL implements IGeneraCodeService {
 
-	private static Logger LOG = LoggerFactory.getLogger(GeneraShurtURL.class);
+	private static Logger LOG = LoggerFactory.getLogger(GeneraShortenerURL.class);
 	
 	@Autowired
 	@Qualifier("generadorGoogle")
@@ -28,18 +28,18 @@ public class GeneraShurtURL implements IGeneraCodeService {
 	
 	
 	@Override
-	public String generaShurtURL(String redirect) {
+	public String generaShortenerURL(String redirect) {
 		if(redirect.toLowerCase().contains("google")) {
-			return "Alias : " + repoGoogle.generaShurtURL(redirect);
+			return "Alias : " + repoGoogle.generaShortenerURL(redirect);
 		}else if(redirect.toLowerCase().contains("yahoo")) {
-			return "Alias : " + repoYahoo.generaShurtURL(redirect);
+			return "Alias : " + repoYahoo.generaShortenerURL(redirect);
 		}else {
-			return "Alias : " + repoOther.generaShurtURL(redirect);
+			return "Alias : " + repoOther.generaShortenerURL(redirect);
 		}
 	}
 
 	@Override
-	public String decodificaShurtURL(String shurtUrl) {
+	public String decodificaShortenerURL(String shurtUrl) {
 		if(repoGoogle.getClavesAlphaLlave().containsKey(shurtUrl)) {
 			 return  (String) repoGoogle.getClavesAlphaLlave().get(shurtUrl);
 		} else if(repoOther.getClavesAlphaLlave().containsKey(shurtUrl)) {

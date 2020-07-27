@@ -19,7 +19,7 @@ public class GeneradorYahoo implements IGeneraCodeRepository<Integer, String> {
 	
 	
 	/**
-	 * Metodo generador del shurt URL
+	 * Metodo generador del shortenerURL
 	 * @return el shurt URL
 	 */
 	public Integer generaClaveAleatoria() {
@@ -44,15 +44,15 @@ public class GeneradorYahoo implements IGeneraCodeRepository<Integer, String> {
 
 	/**
 	 * Metodo que se encarga de validar si el shurt URL no existe previamente en nuestro hashmap
-	 * @param url shurt URL a validar 
-	 * @return un booleando dependiendo si existe o no el shurt url
+	 * @param url shortenerURL a validar 
+	 * @return un booleando dependiendo si existe o no el shortenerURL
 	 */
 	private boolean validadValor(String url) {
 		 return clavesAlphaLlave.containsValue(url);
 	}
 	
 	@Override
-	public String generaShurtURL(String url) {
+	public String generaShortenerURL(String url) {
 		if (validadValor(url)) {
 			clavesAlphaLlave.entrySet().forEach( e -> {
 				if (e.getValue().equals(url)) {
@@ -66,7 +66,7 @@ public class GeneradorYahoo implements IGeneraCodeRepository<Integer, String> {
 	}
 
 	@Override
-	public String decodificaShurtURL(String shurtUrl) {
+	public String decodificaShortenerURL(String shurtUrl) {
 		return clavesAlphaLlave.get(Integer.parseInt(shurtUrl));
 	}
 
