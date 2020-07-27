@@ -8,7 +8,7 @@ parámetro y nos regresa la url original.
 
 Pruebas realizadas para la validación del código:
 
-http://localhost:8080/shurtURL/
+http://localhost:8080/shortenerURL/
 
 POST
 {
@@ -38,7 +38,7 @@ Alias : 6136600
 
 Para  validar la respuesta de los métodos GET solo es necesario poner:
 
-http://localhost:8080/shurtURL/(Alias regresado).
+http://localhost:8080/shortenerURL/(Alias regresado).
 
 
 
